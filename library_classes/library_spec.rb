@@ -23,21 +23,9 @@ def test_list_all_books
 end
 
 
-
-
-
-
-
-# Create a method that list all the books and their corresponding detail
- 
-
-
-
-
-
-
-
-
+def test_book_to_rental
+  assert_equal({:student_name=>"Jeff", :date=>"01/10/2017"}, @library.rental_details("the_name_of_the_wind"))
+end  
 
 
 
