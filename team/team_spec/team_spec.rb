@@ -4,7 +4,7 @@ require_relative('../team.rb')
 class TestTeam < MiniTest::Test
 
 def setup
-  @team = Team.new("CodeClan", ["James", "Glenn"], "Zsolt")
+  @team = Team.new("CodeClan", ["James", "Glenn"], "Zsolt", 0)
 end  
 
 def test_team_name
@@ -32,10 +32,13 @@ def test_player_found
   assert_equal("Glenn", @team.finding_player("Glenn"))
 end  
 
+def test_points_counter__add
+  assert_equal(1, @team.add_to_counter("win"))
+ end 
 
-
-
-
+def test_points_counter__remove
+    assert_equal(-1, @team.add_to_counter("lose"))  
+end
 
 
 end
